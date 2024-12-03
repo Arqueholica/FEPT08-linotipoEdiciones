@@ -1,6 +1,6 @@
 <template>
     <div>
-        Hello darkness my old friend 🛸
+        Yo soy tu home 
     </div>
 </template>
 
