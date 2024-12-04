@@ -1,11 +1,22 @@
 <template>
-  <div class="grid grid-cols-3">
-    <div class="col-start-1">
-      <h1 class="text-8xl text-red-600 font-bold underline">
-        Hello world! {{ title }} 🥸🍟🍔🛸
-      </h1>
+  <div class="grid grid-cols-3 grid-rows-3">
+    <div class="col-span-full row-start-1">
+      <div class="p-10 bg-blue-200">Yo soy tu home</div>
+     
     </div>
-    <div class=" col-start-2 p-10 font-bold text-serif"><router-view /></div>
+    <div class="p-10 bg-green-200 col-span-full row-start-2">
+      <nav>
+        <router-link to="/colecciones"
+          ><button class="px-4">Colecciones</button></router-link
+        >
+        <router-link to="/fasciculos"
+          ><button class="px-4">Fascículos</button></router-link
+        >
+      </nav>
+    </div> 
+    <div class= "col-span-full row-start-3">
+    <RouterView />
+  </div>
   </div>
 </template>
 
@@ -13,9 +24,7 @@
 export default {
   name: "App",
   data() {
-    return {
-      title: "LET'S EAT THE WORLD",
-    };
+    return {};
   },
 };
 </script>

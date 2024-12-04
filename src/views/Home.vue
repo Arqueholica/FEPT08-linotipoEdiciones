@@ -1,7 +1,5 @@
 <template>
-    <div>
-        Yo soy tu home 
-    </div>
+
 </template>
 
 
