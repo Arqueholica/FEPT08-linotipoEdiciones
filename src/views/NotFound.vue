@@ -1,17 +1,11 @@
 <template>
-<figure class="relative transition-all duration-300 hover:grayscale hover:scale-95">
+<div>
   <router-link to="/">
-    <img class="rounded-lg" src="../assets/CaravaggioNotFound.jpg">
+    <img class="absolute inset-0 rounded-lg transition-all duration-300 hover:blur hover:scale-95" src="../assets/CaravaggioNotFound.jpg">
  </router-link>
-  <figcaption class="absolute px-4 text-xl font-serif text-white top-10 left-[500px]">
-      <p>Lo siento, no encuentro lo que buscas </p>
-  </figcaption>
-</figure>   
 
-
-
-
-
+<p class="relative flex justify-center  text-6xl text-white font-semibold"> Lo siento, no encuentro lo que buscas</p>
+</div>
 </template>
 
 
