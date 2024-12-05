@@ -28,7 +28,7 @@
 
     <div class="col-span-full row-start-3 m-2 bg-orange-200">
       <div class="flex flex-col py-5 px-10 justify-self-center">
-        <h6 class="py-2">¿Quieres ser una de las nuestras?</h6>
+        <h6 class="py-2 text-center text-xl font-bold font-serif">¿Quieres ser una de las nuestras?</h6>
         <p class="p-2 border-2">
           1. Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
           2. Enim nesciunt officia eaque similique esse vero, quia perferendis

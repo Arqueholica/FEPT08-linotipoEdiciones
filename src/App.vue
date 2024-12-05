@@ -11,7 +11,7 @@
 
   <!-- BARRA DE NAVEGACIÓN -->
 
-  <div class="p-8 bg-green-200 text-md font-bold font-serif">
+  <div class="p-6 bg-green-200 text-lg font-bold font-serif">
     <nav class="flex justify-between">
       <div>
       <router-link to="/colecciones"
@@ -19,10 +19,17 @@
       >
       <router-link to="/fasciculos"
         ><button class="px-4">Fascículos</button></router-link
-      >
+      > 
+      <button class="px-4">Autoras</button>
+      <button class="px-4">Revista</button>
     </div>
-    <div class="flex justify-self-center">
-      <input type="search" class="border-2 border-black h-6">
+   
+    <div class="flex justify-self-center align-baseline">
+      <div class="flex"> 
+      <input type="search" class="border-2 border-black border-opacity-45 rounded-lg shadow-md p-1 w-[50px] bg-transparent focus:w-[400px] transition-all" placeholder="Encuentra lo que buscas">
+      <button class="flex items-centerfont-serif mx-2 p-1" type="submit"> <img src="../src/assets/search.svg" /></button> 
+    </div> 
+
       <router-link to="/user"
         ><button class="px-4"><img src="./assets/user.svg" class="size-8" /></button
       ></router-link>
@@ -46,14 +53,14 @@
   <footer class="grid grid-cols-3 gap-x-1">
     <div class="col-span-1 bg-blue-200">
       <h6 class="m-2 font-bold text-center">CONTACTO</h6>
-      <input class="m-2" type="text" placeholder="María Josefa" />
+      <input class="m-2 border-2 border-black rounded-lg border-opacity-45" type="text" placeholder="María Josefa" />
       <input
-        class="w-[260px]"
+        class="w-[260px] m-2 border-2 border-black rounded-lg border-opacity-45"
         type="email"
         placeholder="mariajosefa@mail.com"
       />
       <textarea
-        class="m-2 w-[450px] h-[100px]"
+        class="m-2 p-1 border-2 border-black rounded-lg border-opacity-45 w-[400px] h-[100px]"
         placeholder="Escribe lo que necesites saber"
       />
     </div>
@@ -64,6 +71,8 @@
         <li>Home</li>
         <li>Colecciones</li>
         <li>Fascículos</li>
+        <li>Autoras</li>
+        <li>Revista</li>
       </ul>
     </div>
 
