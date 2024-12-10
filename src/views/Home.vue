@@ -1,22 +1,13 @@
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-4 ">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-4">
     <!-- HERO SECTION CON LLAMADAS A ACCIÓN -->
     <div class="col-span-full row-start-1 p-20 m-2 bg-purple-200 text-center">
       SOY LA HERO SECTION QUE SERÉ UN CARROUSEL el cómo ya lo veremos
-      <div> sección pruebas PINIA
-      <div>
-        {{ counter.count }}
-        <button class="border-2 border-black rounded-lg bg-slate-300 p-2" @click="counter.increment">+</button>
-        <button class="border-2 border-black rounded-lg bg-slate-300 p-2" @click="counter.decrement" >-</button>
-        <button class="border-2 border-black rounded-lg bg-slate-300 p-2" @click="counter.restart">Restart</button>
-     {{ counter.multiplyfour }}
-     {{ counter.dobleCount }}
-     {{ counter.halfCount }}
-      </div>
-
+      <p v-for="(book, i) in booksList" :key="i">{{ book }}</p>
+      <p><button @click="addNewBook">Libro Nuevo</button></p>
+      <p><button @click="takeLastBook">Quitar último</button></p>
+      
     </div>
-    </div>
-
 
     <!-- TRES SECCIONES QUE SE QUIERAN DESTACAR (incluir ofertas de temporada) -->
 
@@ -56,23 +47,34 @@
 </template>
 
 <script>
-import useCounterStore from '../stores/counter';
-
+import useCounterStore from "../stores/counter";
+import useBooksStore from "../stores/booksProva";
 
 export default {
-  name: "Home",  
-  computed:{
-    counter(){
-    return useCounterStore()
-  },
- 
+  name: "Home",
+  computed: {
+    counter() {
+      return useCounterStore();
+    },
+    books(){
+      return useBooksStore()
+    },
+    booksList(){
+      return this.books.books
+    },
+    
   },
   data() {
     return {};
   },
 
-  methods:{
-
+  methods: {
+    addNewBook() {
+      return this.books.addBook("book");
+    },
+    takeLastBook(){
+      return this.books.extractBook('book')
+    } 
 
   },
 };

@@ -28,6 +28,7 @@
         <button class="px-2 hover:bg-green-100">Autoras</button>
         <button class="px-2 hover:bg-green-100">Revista</button>
       </div>
+
       <!-- SEARCH BAR -->
       <div class="flex justify-center items-center">
         <div class="relative">
@@ -43,6 +44,7 @@
             <img src="../src/assets/search.svg" />
           </button>
         </div>
+
         <!-- ICONOS BONICOS -->
         <div class="flex justify-center items-center">
           <router-link to="/user"
@@ -83,7 +85,7 @@
 
   <!-- FOOTER CON INFO GENERAL -->
 
-  <footer class="grid grid-cols-3 gap-x-1">
+  <footer class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-1">
     <div class="col-span-1 bg-blue-200">
       <h6 class="m-2 font-bold text-center">CONTACTO</h6>
       <input

@@ -1,5 +1,5 @@
 <template>
-<div class="p-10 bg-red-300">
+<div class="p-10 bg-red-300 my-1">
     <router-link to="/">Volver</router-link> 
     <h2> COLECCIONES</h2>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
