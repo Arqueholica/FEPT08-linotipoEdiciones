@@ -3,22 +3,33 @@
         <img :src="tema.imagen" class="object-cover pb-2"></img>
         <h2 class="font-bold text-xl">{{tema.título}}</h2>
         <p> {{ tema.descripción }}</p>
+        <button><router-link :to="`/colecciones/${tema.título}`">Más...</router-link></button>
+       <p v-for="(book, i) in booksList" :key="i">{{ book }}</p>
+      <p><button @click="addNewBook">Libro Nuevo</button></p>
+      <p><button @click="takeLastBook">Quitar último</button></p>
     </div>
     <div>
-        <CardBooks />
+         
     </div>
    
 </template>
 
 
 <script>
-import CardBooks from './CardBooks.vue';
 
+import useBooksStore from "../stores/booksProva";
 
 
 export default {
     name: "CardThemes",
-
+    computed: {
+    books(){
+      return useBooksStore()
+    },
+    booksList(){
+      return this.books.books
+    },
+    },
     data(){
         return{
             temas:[
@@ -50,6 +61,15 @@ export default {
                 
         } 
     },
+    methods: {
+    addNewBook() {
+      return this.books.addBook("book");
+    },
+    takeLastBook(){
+      return this.books.extractBook('book')
+    } 
+
+  },
 
 }
 </script>

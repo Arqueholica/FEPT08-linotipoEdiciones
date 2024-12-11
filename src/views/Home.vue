@@ -3,10 +3,7 @@
     <!-- HERO SECTION CON LLAMADAS A ACCIÓN -->
     <div class="col-span-full row-start-1 p-20 m-2 bg-purple-200 text-center">
       SOY LA HERO SECTION QUE SERÉ UN CARROUSEL el cómo ya lo veremos
-      <p v-for="(book, i) in booksList" :key="i">{{ book }}</p>
-      <p><button @click="addNewBook">Libro Nuevo</button></p>
-      <p><button @click="takeLastBook">Quitar último</button></p>
-      
+        <!-- Component¿?¿?¿ -->
     </div>
 
     <!-- TRES SECCIONES QUE SE QUIERAN DESTACAR (incluir ofertas de temporada) -->
@@ -48,7 +45,7 @@
 
 <script>
 import useCounterStore from "../stores/counter";
-import useBooksStore from "../stores/booksProva";
+
 
 export default {
   name: "Home",
@@ -56,26 +53,13 @@ export default {
     counter() {
       return useCounterStore();
     },
-    books(){
-      return useBooksStore()
-    },
-    booksList(){
-      return this.books.books
-    },
+    
     
   },
   data() {
     return {};
   },
 
-  methods: {
-    addNewBook() {
-      return this.books.addBook("book");
-    },
-    takeLastBook(){
-      return this.books.extractBook('book')
-    } 
-
-  },
+ 
 };
 </script>
