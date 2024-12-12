@@ -1,20 +1,28 @@
 <template>
-    <div v-for="tema in temas" :key="tema" @click.prevent='verLibros(tema)' class="bg-white p-10 m-1 border-2 border-black rounded-md text-serif justify-items-center">
-        <img :src="tema.imagen" class="object-cover pb-2"></img>
-        <h2 class="font-bold text-xl">{{tema.título}}</h2>
-        <p> {{ tema.descripción }}</p>
-        <button><router-link :to="`/colecciones/${tema.título}`">Más...</router-link></button>
-       <p v-for="(book, i) in booksList" :key="i">{{ book }}</p>
-      <p><button @click="addNewBook">Libro Nuevo</button></p>
-      <p><button @click="takeLastBook">Quitar último</button></p>
+    <div
+      v-for="tema in temas"
+      :key="tema.título"
+      @click.prevent="verLibros(tema)"
+      class="w-[300px] h-auto border-2 border-black rounded-md shadow-lg bg-white hover:scale-105 transition-all">
+      <img
+        :src="tema.imagen"
+        :alt="tema.título"
+        class="w-full h-[150px] object-cover"
+      />
+      <div class="p-4 text-gray-80 bg-teal-50">
+        <h2 class="font-bold text-xl mb-2">{{ tema.título }}</h2>
+        <p class="text-md text-center mb-4">{{ tema.descripción }}</p>
+        <p class="text-black place-self-end text-sm opacity-80 hover:italic hover:opacity-100">
+          <router-link :to="`/colecciones/${tema.título}`"> Más...</router-link></p>
+      </div>
     </div>
-    <div>
-         
-    </div>
+ 
    
 </template>
 
-
+ <!-- <p v-for="(book, i) in booksList" :key="i">{{ book }}</p>
+      <p><button @click="addNewBook">Libro Nuevo</button></p>
+      <p><button @click="takeLastBook">Quitar último</button></p> -->
 <script>
 
 import useBooksStore from "../stores/booksProva";
@@ -34,27 +42,27 @@ export default {
         return{
             temas:[
                 {título: 'Terror',
-                imagen: 'https://via.placeholder.com/150/FFC0CB/FFFFFF?text=Terror',
+                imagen: './src/assets/Terror.png',
                 descripción:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                 },
                 {título:'Historia',
-                imagen: 'https://via.placeholder.com/150/FFC0CB/FFFFFF?text=Historia',
+                imagen: './src/assets/Historia.png',
                 descripción:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                 }, 
                 {título:'Fantasía',
-                imagen: 'https://via.placeholder.com/150/FFC0CB/FFFFFF?text=Fantasia',
+                imagen: './src/assets/Fantasia.png',
                 descripción:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                 }, 
                 {título:'Romántica',
-                imagen: 'https://via.placeholder.com/150/FFC0CB/FFFFFF?text=Romántica',
+                imagen: './src/assets/Romance.png',
                 descripción:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                 },
                 {título:'Mujeres',
-                imagen: 'https://via.placeholder.com/150/FFC0CB/FFFFFF?text=Mujeres',
+                imagen: './src/assets/Mujeres.png',
                 descripción:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                 },
                 {título:'Clásicos',
-                imagen: 'https://via.placeholder.com/150/FFC0CB/FFFFFF?text=Clasicos',
+                imagen: './src/assets/Classicos.png',
                 descripción:'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                 }
             ]

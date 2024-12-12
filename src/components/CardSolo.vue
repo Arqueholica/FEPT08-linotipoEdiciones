@@ -2,15 +2,32 @@
   <div>
     <div v-if="loading">Cargando...</div>
     <div v-if="error" class="text-red-500">Error al cargar el libro.</div>
-    <div v-if="book" class="bg-white border-2 border-black">
+
+    <!-- card de Libro -->
+    <router-link to="/" class="text-sm text-black opacity-70 hover:underline hover:italic hover:opacity-100">Volver</router-link>
+    <div
+      v-if="book"
+      class="relative w-full sm:w-[300px] h-auto border-2 border-black overflow-hidden rounded-md shadow-md bg-white"
+    >
       <img
         :src="book.volumeInfo.imageLinks?.thumbnail"
         :alt="book.volumeInfo.title"
+        class="w-full h-[200px] object-cover opacity-90 hover:opacity-100 transition-opacity"
       />
-      <h2>Título: {{ book.volumeInfo.title }}</h2>
-      <h4> Autores: {{ book.volumeInfo.authors?.join(", ") }}</h4>
-      <p>Año de Publicación: {{ book.volumeInfo.publishedDate }}</p>
-      <p>Resumen: {{ book.volumeInfo.description }}</p>
+      <div class="p-4 text-gray-800">
+        <h2 class="font-bold text-xl mb-2">
+          Título: {{ book.volumeInfo.title }}
+        </h2>
+        <h4 class="text-md italic mb-1">
+          Autores: {{ book.volumeInfo.authors?.join(", ") }}
+        </h4>
+        <p class="text-sm mb-2">
+          Año de Publicación: {{ book.volumeInfo.publishedDate }}
+        </p>
+        <p class="text-sm line-clamp-3 hover:line-clamp-none transition-all">
+          Resumen: {{ book.volumeInfo.description }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -19,16 +36,16 @@
 export default {
   name: "CardSolo",
   computed: {
-  bookId() {
-    return this.$route.params.bookId;
+    bookId() {
+      return this.$route.params.bookId;
+    },
   },
-},
   data() {
     return {
       book: [],
       loading: false,
       error: false,
-      key: "AIzaSyCHGeGKFBkCOQS51l9Laf6CFFIRzwQHQfM",
+      key: "AIzaSyBiWPwMmOICK7zTqyxqjztUtYc2x5wVKDI",
     };
   },
   mounted() {
@@ -40,7 +57,7 @@ export default {
         this.loading = true;
         this.error = false;
         const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes/${this.bookId}?key=AIzaSyCHGeGKFBkCOQS51l9Laf6CFFIRzwQHQfM`
+          `https://www.googleapis.com/books/v1/volumes/${this.bookId}?key=AIzaSyBiWPwMmOICK7zTqyxqjztUtYc2x5wVKDI`
         );
         if (!response.ok) {
           this.error = true;

@@ -1,16 +1,17 @@
 <template>
   <!-- TÍTULO CON LOGO + ENLACE EN LOGO (HOME) -->
-  <header class="p-4 bg-white shadow-lg">
-    <h1 class="flex items-center justify-center text-3xl lg:text-8xl">
+  <header class="p-4 bg-[#B44A1C]">
+    <h1 class="flex items-center justify-center text-white border-4 rounded-md shadow-lg py-2 font-serif text-4xl lg:text-8xl">
       Linotipo
       <router-link to="/"
-        ><img src="./assets/LogoLE.png" class="size-10 lg:size-40 mx-2"
+        ><img src="./assets/LogoLE.svg" class="bg-white rounded-full size-10 lg:size-40 mx-2"
       /></router-link>
       Ediciones
     </h1>
   </header>
 
   <!-- BARRA DE NAVEGACIÓN -->
+
   <!-- BOTONCITOS TÍPICOS -->
   <div class="p-4 bg-green-200 text-lg font-bold font-serif">
     <nav class="hidden md:flex justify-between items-center">
