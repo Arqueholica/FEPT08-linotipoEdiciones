@@ -1,10 +1,14 @@
 <template>
   <!-- TÍTULO CON LOGO + ENLACE EN LOGO (HOME) -->
-  <header class="p-4 bg-[#B44A1C]">
-    <h1 class="flex items-center justify-center text-white border-4 rounded-md shadow-lg py-2 font-serif text-4xl lg:text-8xl">
+  <header class="p-4 bg-[#750016] bg-opacity-80 mb-1">
+    <h1
+      class="flex items-center justify-center text-white border-4 rounded-md shadow-lg py-2 font-serif text-4xl lg:text-8xl"
+    >
       Linotipo
       <router-link to="/"
-        ><img src="./assets/LogoLE.svg" class="bg-white rounded-full size-10 lg:size-40 mx-2"
+        ><img
+          src="./assets/LogoLE.svg"
+          class="bg-white rounded-full size-10 lg:size-40 mx-2"
       /></router-link>
       Ediciones
     </h1>
@@ -13,21 +17,23 @@
   <!-- BARRA DE NAVEGACIÓN -->
 
   <!-- BOTONCITOS TÍPICOS -->
-  <div class="p-4 bg-green-200 text-lg font-bold font-serif">
+  <div
+    class="py-2 mx-1 border-2 border-black rounded-lg shadow-md text-lg font-bold font-serif"
+  >
     <nav class="hidden md:flex justify-between items-center">
       <div>
         <router-link to="/colecciones"
-          ><button class="px-2 hover:bg-green-100 ">
+          ><button class="mx-2 hover:underline hover:scale-105">
             Colecciones
           </button></router-link
         >
         <router-link to="/fasciculos"
-          ><button class="px-2 hover:bg-green-100">
+          ><button class="mx-2 hover:underline hover:scale-105">
             Fascículos
           </button></router-link
         >
-        <button class="px-2 hover:bg-green-100">Autoras</button>
-        <button class="px-2 hover:bg-green-100">Revista</button>
+        <button class="mx-2 hover:underline hover:scale-105">Autoras</button>
+        <button class="mx-2 hover:underline hover:scale-105">Revista</button>
       </div>
 
       <!-- SEARCH BAR -->
@@ -67,18 +73,32 @@
 
   <!-- MENÚ MÓVIL -->
   <div class="flex md:hidden justify-between items-center">
-    <button @click="toggleMenu" class="hover:outline outline-green-500"><img src="../src/assets/hamburger.svg" class="size-4"/></button>
-  <div v-if="isOpen" class="bg-green-200 absolute top-20 left-0 w-full md:hidden"><img @click="closeMenu" src="../src/assets/close.svg" class="absolute left-80 size-6 md:hidden"/>
-    <router-link to="/colecciones"
-      ><button class=" block p-2 hover:bg-green-100">Colecciones</button></router-link
+    <button @click="toggleMenu" class="hover:outline outline-black">
+      <img src="../src/assets/hamburger.svg" class="size-4" />
+    </button>
+    <div
+      v-if="isOpen"
+      class="bg-slate-500 absolute top-20 left-0 w-full md:hidden"
     >
-    <router-link to="/fasciculos"
-      ><button class="block p-2 hover:bg-green-100">Fascículos</button></router-link
-    >
-    <button class="block p-2 hover:bg-green-100">Autoras</button>
-    <button class="block p-2 hover:bg-green-100">Revista</button>
+      <img
+        @click="closeMenu"
+        src="../src/assets/close.svg"
+        class="absolute left-80 size-6 md:hidden"
+      />
+      <router-link to="/colecciones"
+        ><button class="block p-2 hover:underline-2 hover">
+          Colecciones
+        </button></router-link
+      >
+      <router-link to="/fasciculos"
+        ><button class="block p-2 hover:underline-2 hover">
+          Fascículos
+        </button></router-link
+      >
+      <button class="block p-2 hover:underline-2 hover">Autoras</button>
+      <button class="block p-2 hover:underline-2 hover">Revista</button>
+    </div>
   </div>
-</div>
 
   <!-- ZONA DE EXPOSICIÓN DE VIEWS -->
 
@@ -88,7 +108,7 @@
 
   <footer class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-1">
     <div class="col-span-1 bg-blue-200">
-      <h6 class="m-2 font-bold text-center">CONTACTO</h6>
+      <h6 class="mt-2 mb-6 text-lg font-bold text-center">CONTACTO</h6>
       <input
         class="m-2 border-2 border-black rounded-lg border-opacity-45"
         type="text"
@@ -100,14 +120,20 @@
         placeholder="mariajosefa@mail.com"
       />
       <textarea
-        class="m-2 p-1 border-2 border-black rounded-lg border-opacity-45 w-[400px] h-[100px]"
+        class="m-2 p-1 border-2 border-black rounded-lg border-opacity-45 w-[400px] h-[50px]"
         placeholder="Escribe lo que necesites saber"
       />
+      <button
+        class="m-2 px-2 bg-slate-100 border-2 border-black rounded-lg border-opacity-45 hover:scale-90"
+        type="submit"
+      >
+        Enviar
+      </button>
     </div>
 
     <div class="col-span-1 bg-blue-200">
-      <h6 class="m-2 font-bold text-center">MAPA DE LA WEB</h6>
-      <ul class="mx-2">
+      <h6 class="mt-2 mb-6 text-lg font-bold text-center">MAPA DE LA WEB</h6>
+      <ul class="mx-2 text-center">
         <li>Home</li>
         <li>Colecciones</li>
         <li>Fascículos</li>
@@ -117,13 +143,32 @@
     </div>
 
     <div class="col-span-1 bg-blue-200">
-      <h6 class="m-2 font-bold text-center">SÍGUENOS</h6>
+      <h6 class="mt-2 mb-6 text-lg font-bold text-center">SÍGUENOS</h6>
       <div class="flex justify-evenly">
         <p>
-          <a href=" https://www.instagram.com/" target="_blank">Instagram </a>
+          <a
+            href=" https://www.instagram.com/"
+            target="_blank"
+            class="flex flex-col items-center"
+            ><i class="fab fa-instagram text-2xl"></i>Instagram
+          </a>
         </p>
-        <p><a href="https://www.facebook.com/" target="_blank">Facebook</a></p>
-        <p><a href="https://www.tiktok.com/" target="_blank">TikTok</a></p>
+        <p>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="flex flex-col items-center"
+            ><i class="fab fa-facebook text-2xl"></i>Facebook</a
+          >
+        </p>
+        <p>
+          <a
+            href="https://www.tiktok.com/"
+            target="_blank"
+            class="flex flex-col items-center"
+            ><i class="fab fa-tiktok text-2xl"></i>TikTok</a
+          >
+        </p>
       </div>
       <div class="flex flex-col justify-self-center my-4">
         <p class="my-2">¿Quieres saber más de literatura?</p>
@@ -142,16 +187,16 @@ export default {
   name: "App",
   data() {
     return {
-    isOpen:false,
-  };
+      isOpen: false,
+    };
   },
-  methods:{
-    toggleMenu(){
-      this.isOpen = !this.isOpen
+  methods: {
+    toggleMenu() {
+      this.isOpen = !this.isOpen;
     },
-    closeMenu(){
-      this.isOpen = false
-    }
+    closeMenu() {
+      this.isOpen = false;
+    },
   },
 };
 </script>

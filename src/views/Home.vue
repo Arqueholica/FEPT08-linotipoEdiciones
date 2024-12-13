@@ -1,32 +1,32 @@
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-3 gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4">
     <!-- HERO SECTION CON LLAMADAS A ACCIÓN -->
-    <div class="col-span-full row-start-1 p-20 m-2 bg-purple-200 text-center">
-      SOY LA HERO SECTION QUE SERÉ UN CARROUSEL el cómo ya lo veremos
-        <!-- Component¿?¿?¿ -->
+    <div
+      class="col-span-full h-full p-8 border-2 bg-[#750016] bg-opacity-10 border-black rounded-lg m-1">
+      <Carrousel />
     </div>
 
     <!-- TRES SECCIONES QUE SE QUIERAN DESTACAR (incluir ofertas de temporada) -->
 
     <div
-      class="size-60 col-start-1 row-start-2 bg-red-200 p-10 m-2 justify-self-center"
+      class="h-[300px] w-full col-start-1  bg-red-200 p-9 m-2 justify-self-center"
     >
       Soy el libro más vendido
     </div>
     <div
-      class="size-60 col-start-2 row-start-2 bg-red-200 p-10 m-2 justify-self-center"
+      class="h-[300px] w-full col-start-2  bg-red-200 p-10 m-2 justify-self-center"
     >
       Soy una novedad novedosa
     </div>
     <div
-      class="size-60 col-start-3 row-start-2 bg-red-200 p-10 m-2 justify-self-center"
+      class="h-[300px] w-full col-start-3  bg-red-200 p-10 m-2 justify-self-center"
     >
       Soy la autora destacada
     </div>
 
     <!-- ANIMAR A LAS AUTORAS A CONTACTAR CON NOSOTRAS -->
 
-    <div class="col-span-full row-start-3 m-2 bg-orange-200">
+    <div class="col-span-full  m-2 bg-orange-200">
       <div class="flex flex-col py-5 px-10 justify-self-center">
         <h6 class="py-2 text-center text-xl font-bold font-serif">
           ¿Quieres ser una de las nuestras?
@@ -45,21 +45,18 @@
 
 <script>
 import useCounterStore from "../stores/counter";
-
+import Carrousel from "../components/Carrousel.vue";
 
 export default {
   name: "Home",
+  components:{Carrousel},
   computed: {
     counter() {
       return useCounterStore();
     },
-    
-    
   },
   data() {
     return {};
   },
-
- 
 };
 </script>

@@ -16,10 +16,12 @@
       >
         Error
       </div>
+      <div class="bg-[#750016] bg-opacity-20"><h1 class="text-4xl font-bold font-serif text-center text-black mb-4 py-6">{{ tema }}</h1></div>
 
       <!-- CARD DE LIBRO -->
-      <h1 class="text-2xl font-bold mb-4 px-4">{{ tema }}</h1>
+    
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6">
+        
         <div
           v-for="book in books"
           :key="book.id"
@@ -30,8 +32,8 @@
             :alt="book.volumeInfo.title"
             class="absolute w-full h-full object-cover opacity-70 hover:opacity-100 hover:scale-110 transition-all"
           />
-          <div class="absolute bottom-0 bg-gradient-to-t from-black to-transparent text-white capitalize p-3">
-            <h2 class="font-bold text-xl">{{ book.volumeInfo.title }}</h2>
+          <div class="absolute bottom-0 bg-gradient-to-t from-slate-600 to-transparent rounded-md p-1 text-white w-full capitalize">
+            <h2 class="font-bold text-xl text-left">{{ book.volumeInfo.title }}</h2>
             <h4 class="text-sm italic">
               {{ book.volumeInfo.authors?.join(", ") }}
             </h4>
@@ -43,7 +45,12 @@
             </router-link>
           </div>
         </div>
+
+        
       </div>
+
+
+
     </div>
   </div>
 </template>

@@ -4,11 +4,7 @@
       :key="tema.título"
       @click.prevent="verLibros(tema)"
       class="w-[300px] h-auto border-2 border-black rounded-md shadow-lg bg-white hover:scale-105 transition-all">
-      <img
-        :src="tema.imagen"
-        :alt="tema.título"
-        class="w-full h-[150px] object-cover"
-      />
+      <img :src="tema.imagen" :alt="tema.título"class="w-full h-[150px] object-cover" />
       <div class="p-4 text-gray-80 bg-teal-50">
         <h2 class="font-bold text-xl mb-2">{{ tema.título }}</h2>
         <p class="text-md text-center mb-4">{{ tema.descripción }}</p>
