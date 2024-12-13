@@ -4,28 +4,37 @@
     <div v-if="error" class="text-red-500">Error al cargar el libro.</div>
 
     <!-- card de Libro -->
-    <router-link to="/" class="text-sm text-black opacity-70 hover:underline hover:italic hover:opacity-100">Volver</router-link>
+    <router-link
+      to="/"
+      class="text-sm text-black opacity-70 hover:underline hover:italic hover:opacity-100"
+      >Volver</router-link
+    >
+
     <div
       v-if="book"
-      class="relative w-full sm:w-[300px] h-auto border-2 border-black overflow-hidden rounded-md shadow-md bg-white"
+      class="flex p-10 gap-x-6 w-full h-full rounded-md shadow-md bg-white"
     >
-      <img
-        :src="book.volumeInfo.imageLinks?.thumbnail"
+      <div
+        class="size-80 opacity-90 bg-red-400 border-2 border-black hover:opacity-100 transition-all"
+      >
+        <!-- <img
+        :src="book.volumeInfo?.imageLinks?.large"
         :alt="book.volumeInfo.title"
-        class="w-full h-[200px] object-cover opacity-90 hover:opacity-100 transition-opacity"
-      />
-      <div class="p-4 text-gray-800">
+      /> -->
+      </div>
+
+      <div class="flex flex-col justify-evenly text-justify p-4 text-gray-800 border-2 border-black">
         <h2 class="font-bold text-xl mb-2">
-          Título: {{ book.volumeInfo.title }}
+          {{ book.volumeInfo?.title }}
         </h2>
         <h4 class="text-md italic mb-1">
-          Autores: {{ book.volumeInfo.authors?.join(", ") }}
+          {{ book.volumeInfo?.authors?.join(", ") }}
         </h4>
         <p class="text-sm mb-2">
-          Año de Publicación: {{ book.volumeInfo.publishedDate }}
+          Año de Publicación: {{ book.volumeInfo?.publishedDate }}
         </p>
-        <p class="text-sm line-clamp-3 hover:line-clamp-none transition-all">
-          Resumen: {{ book.volumeInfo.description }}
+        <p class="text-md line-clamp-4 hover:line-clamp-none transition-all">
+          {{ book.volumeInfo?.description }}
         </p>
       </div>
     </div>
@@ -42,7 +51,7 @@ export default {
   },
   data() {
     return {
-      book: [],
+      book: {},
       loading: false,
       error: false,
       key: "AIzaSyBiWPwMmOICK7zTqyxqjztUtYc2x5wVKDI",
@@ -53,18 +62,18 @@ export default {
   },
   methods: {
     async getSoloBook() {
+      if (!this.bookId) {
+        this.error = true;
+        return;
+      }
       try {
         this.loading = true;
         this.error = false;
         const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes/${this.bookId}?key=AIzaSyBiWPwMmOICK7zTqyxqjztUtYc2x5wVKDI`
+          `https://www.googleapis.com/books/v1/volumes/${this.bookId}`
         );
         if (!response.ok) {
-          this.error = true;
-          this.loading = false;
-          throw new Error(
-            "Lo siento, se ha producido un error ${response.status}: ${response.statusText} "
-          );
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
         const data = await response.json();
         this.book = data;

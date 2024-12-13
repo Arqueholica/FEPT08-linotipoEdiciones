@@ -38,7 +38,7 @@
               {{ book.volumeInfo.authors?.join(", ") }}
             </h4>
             <router-link
-              :to="`/colecciones/${tema.título}/${book.id}`"
+              :to="`/colecciones/${tema}/${book.id}`"
               class="text-slate-300 hover:underline hover:italic"
             >
               Continúa
@@ -87,9 +87,7 @@ export default {
         if (!response.ok) {
           this.error = true;
           this.loading = false;
-          throw new Error(
-            "Lo siento, se ha producido un error ${response.status}: ${response.statusText} "
-          );
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
         const data = await response.json();
         this.books = data.items;

@@ -5,6 +5,8 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import Home from './views/Home.vue'
 import Colecciones from "./views/Colecciones.vue";
 import Fasciculos from "./views/Fasciculos.vue";
+import Autoras from "./views/Autoras.vue";
+import Revista from "./views/Revista.vue";
 import User from "./views/User.vue";
 import NotFound from "./views/NotFound.vue";
 import CardBooks from "./components/CardBooks.vue";
@@ -33,7 +35,7 @@ const routes = [
     },
     {
         path:'/colecciones/:tema/:bookId',
-        name: 'LibrosPorTema',
+        name: 'Libro',
         component: CardSolo,
 
     },
@@ -41,6 +43,16 @@ const routes = [
         path: '/fasciculos',
         name: 'Fasciculos',
         component: Fasciculos
+    },
+    {
+        path: '/autoras',
+        name: 'Autoras',
+        component: Autoras
+    },
+    {
+        path: '/revista',
+        name: 'Revista',
+        component: Revista
     },
     {
         path: '/user',

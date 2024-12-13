@@ -32,8 +32,16 @@
             Fascículos
           </button></router-link
         >
-        <button class="mx-2 hover:underline hover:scale-105">Autoras</button>
-        <button class="mx-2 hover:underline hover:scale-105">Revista</button>
+        <router-link to="/autoras"
+          ><button class="mx-2 hover:underline hover:scale-105">
+            Autoras
+          </button></router-link
+        >
+        <router-link to="/revista">
+          <button class="mx-2 hover:underline hover:scale-105">
+            Revista
+          </button></router-link
+        >
       </div>
 
       <!-- SEARCH BAR -->
