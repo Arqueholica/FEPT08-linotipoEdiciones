@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer{
+    @apply col-span-1 bg-[#3C8C7D] bg-opacity-85 rounded-md m-1 hover:bg-opacity-100
+}
+.footerTitle{
+    @apply mt-2 mb-6 text-xl underline underline-offset-2 font-bold text-center
+}
+.menuButtons{
+    @apply mx-2 hover:underline hover:scale-105
+}
+.headerTitle{
+    @apply flex items-center justify-center text-white border-4 rounded-md shadow-lg py-2 font-serif text-4xl lg:text-8xl
+}

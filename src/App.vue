@@ -1,12 +1,9 @@
 <template>
   <!-- TÍTULO CON LOGO + ENLACE EN LOGO (HOME) -->
   <header class="p-4 bg-[#750016] bg-opacity-80 mb-1">
-    <h1
-      class="flex items-center justify-center text-white border-4 rounded-md shadow-lg py-2 font-serif text-4xl lg:text-8xl"
-    >
+    <h1 class="headerTitle">
       Linotipo
-      <router-link to="/"
-        ><img
+      <router-link to="/"><img
           src="./assets/LogoLE.svg"
           class="bg-white rounded-full size-10 lg:size-40 mx-2"
       /></router-link>
@@ -23,22 +20,22 @@
     <nav class="hidden md:flex justify-between items-center">
       <div>
         <router-link to="/colecciones"
-          ><button class="mx-2 hover:underline hover:scale-105">
+          ><button class="menuButtons">
             Colecciones
           </button></router-link
         >
         <router-link to="/fasciculos"
-          ><button class="mx-2 hover:underline hover:scale-105">
+          ><button class="menuButtons">
             Fascículos
           </button></router-link
         >
         <router-link to="/autoras"
-          ><button class="mx-2 hover:underline hover:scale-105">
+          ><button class="menuButtons">
             Autoras
           </button></router-link
         >
         <router-link to="/revista">
-          <button class="mx-2 hover:underline hover:scale-105">
+          <button class="menuButtons">
             Revista
           </button></router-link
         >
@@ -80,7 +77,7 @@
   </div>
 
   <!-- MENÚ MÓVIL -->
-  <div class="flex md:hidden justify-between items-center">
+  <!-- <div class="flex md:hidden justify-between items-center">
     <button @click="toggleMenu" class="hover:outline outline-black">
       <img src="../src/assets/hamburger.svg" class="size-4" />
     </button>
@@ -106,7 +103,7 @@
       <button class="block p-2 hover:underline-2 hover">Autoras</button>
       <button class="block p-2 hover:underline-2 hover">Revista</button>
     </div>
-  </div>
+  </div> -->
 
   <!-- ZONA DE EXPOSICIÓN DE VIEWS -->
 
@@ -115,20 +112,20 @@
   <!-- FOOTER CON INFO GENERAL -->
 
   <footer class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-1">
-    <div class="col-span-1 bg-blue-200">
-      <h6 class="mt-2 mb-6 text-lg font-bold text-center">CONTACTO</h6>
+    <div class="footer">
+      <h6 class="footerTitle">CONTACTO</h6>
       <input
-        class="m-2 border-2 border-black rounded-lg border-opacity-45"
+        class="flex m-2 p-1 border-2 border-black rounded-lg border-opacity-45"
         type="text"
         placeholder="María Josefa"
       />
       <input
-        class="w-[260px] m-2 border-2 border-black rounded-lg border-opacity-45"
+        class="flex m-2 p-1 border-2 border-black rounded-lg border-opacity-45"
         type="email"
         placeholder="mariajosefa@mail.com"
       />
       <textarea
-        class="m-2 p-1 border-2 border-black rounded-lg border-opacity-45 w-[400px] h-[50px]"
+        class=" flex m-2 py-2 px-3 border-2 border-black rounded-lg border-opacity-45 "
         placeholder="Escribe lo que necesites saber"
       />
       <button
@@ -137,21 +134,22 @@
       >
         Enviar
       </button>
+      
     </div>
 
-    <div class="col-span-1 bg-blue-200">
-      <h6 class="mt-2 mb-6 text-lg font-bold text-center">MAPA DE LA WEB</h6>
+    <div class="footer">
+      <h6 class="footerTitle">MAPA DE LA WEB</h6>
       <ul class="mx-2 text-center">
-        <li>Home</li>
-        <li>Colecciones</li>
-        <li>Fascículos</li>
-        <li>Autoras</li>
-        <li>Revista</li>
+        <router-link to="/"><li>Home</li></router-link>
+        <router-link to="/colecciones"><li>Colecciones</li></router-link>
+        <router-link to="/fasciculos"><li>Fascículos</li></router-link>
+        <router-link to="/autoras"><li>Autoras</li></router-link>
+        <router-link to="/revista"><li>Revista</li></router-link>
       </ul>
     </div>
 
-    <div class="col-span-1 bg-blue-200">
-      <h6 class="mt-2 mb-6 text-lg font-bold text-center">SÍGUENOS</h6>
+    <div class="footer">
+      <h6 class="footerTitle">SÍGUENOS</h6>
       <div class="flex justify-evenly">
         <p>
           <a
@@ -181,7 +179,7 @@
       <div class="flex flex-col justify-self-center my-4">
         <p class="my-2">¿Quieres saber más de literatura?</p>
         <button
-          class="border-2 border-black rounded-full font-semibold text-lg"
+          class="border-2 border-black bg-slate-400 rounded-full font-semibold text-lg hover:bg-slate-600 hover:scale-110 transition-all"
         >
           👉🏻 ¡Suscríbete! 👈🏻
         </button>

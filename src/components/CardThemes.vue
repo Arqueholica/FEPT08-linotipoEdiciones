@@ -16,9 +16,6 @@
    
 </template>
 
- <!-- <p v-for="(book, i) in booksList" :key="i">{{ book }}</p>
-      <p><button @click="addNewBook">Libro Nuevo</button></p>
-      <p><button @click="takeLastBook">Quitar último</button></p> -->
 <script>
 
 import useBooksStore from "../stores/booksProva";
