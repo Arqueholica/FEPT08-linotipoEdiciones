@@ -1,19 +1,20 @@
-import {defineStore} from "pinia"
+import { defineStore } from "pinia";
 
-const useBooksStore = defineStore('books',{
-state: ()=> ({
-    books:[],
-}),
-getters:{},
-actions: {
-    addBook(book){
-        return this.books.push('book')
+const useBooksStore = defineStore('books', {
+  state: () => ({
+    books: [],
+  }),
+  getters: {},
+  actions: {
+    addBook(book) {
+      if (!this.books.find((b) => b.id === book.id)) {
+        this.books.push(book);
+      }
     },
-    extractBook(book){
-        return this.books.pop('book')
-    }
-}
+    extractBook(bookId) {
+      this.books = this.books.filter((b) => b.id !== bookId);
+    },
+  },
+});
 
-})
-
-export default useBooksStore
+export default useBooksStore;

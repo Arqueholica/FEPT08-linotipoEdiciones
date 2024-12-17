@@ -3,14 +3,20 @@
 @tailwind utilities;
 
 .footer{
-    @apply col-span-1 bg-[#3C8C7D] bg-opacity-85 rounded-md m-1 hover:bg-opacity-100
+    @apply col-span-1 w-full bg-[#3C8C7D] bg-opacity-85 border-2 border-gray-500 rounded-md m-1 hover:bg-opacity-100
 }
 .footerTitle{
     @apply mt-2 mb-6 text-xl underline underline-offset-2 font-bold text-center
 }
 .menuButtons{
-    @apply mx-2 hover:underline hover:scale-105
+    @apply mx-2 border-r-2 px-3 border-gray-400 hover:underline hover:scale-105
 }
 .headerTitle{
     @apply flex items-center justify-center text-white border-4 rounded-md shadow-lg py-2 font-serif text-4xl lg:text-8xl
+}
+.downloadButtons{
+    @apply border-2 border-black rounded-md shadow-lg bg-slate-100 px-2 hover:font-bold hover:bg-slate-300 hover:scale-110
+}
+.cardsHome{
+    @apply h-[300px] w-full border-2 border-gray-600 shadow-lg shadow-slate-500 rounded-md p-9 m-2 justify-self-center relative overflow-hidden
 }

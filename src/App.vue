@@ -1,9 +1,12 @@
 <template>
   <!-- TÍTULO CON LOGO + ENLACE EN LOGO (HOME) -->
-  <header class="p-4 bg-[#750016] bg-opacity-80 mb-1">
+  <header
+    class="p-4 bg-[#750016] bg-opacity-80 shadow-md shadow-slate-300 rounded-sm mb-1"
+  >
     <h1 class="headerTitle">
       Linotipo
-      <router-link to="/"><img
+      <router-link to="/"
+        ><img
           src="./assets/LogoLE.svg"
           class="bg-white rounded-full size-10 lg:size-40 mx-2"
       /></router-link>
@@ -15,28 +18,22 @@
 
   <!-- BOTONCITOS TÍPICOS -->
   <div
-    class="py-2 mx-1 border-2 border-black rounded-lg shadow-md text-lg font-bold font-serif"
+    class="py-2 px-1 mx-1 border-2 border-black rounded-lg shadow-md text-md font-bold font-serif"
   >
-    <nav class="hidden md:flex justify-between items-center">
+    <nav class="flex justify-between items-center">
       <div>
         <router-link to="/colecciones"
-          ><button class="menuButtons">
-            Colecciones
-          </button></router-link
+          ><button class="menuButtons">Colecciones</button></router-link
         >
         <router-link to="/fasciculos"
-          ><button class="menuButtons">
-            Fascículos
-          </button></router-link
+          ><button class="menuButtons">Fascículos</button></router-link
         >
         <router-link to="/autoras"
-          ><button class="menuButtons">
-            Autoras
-          </button></router-link
+          ><button class="menuButtons">Autoras</button></router-link
         >
         <router-link to="/revista">
           <button class="menuButtons">
-            Revista
+            Revista "La Bordadora"
           </button></router-link
         >
       </div>
@@ -46,7 +43,7 @@
         <div class="relative">
           <input
             type="search"
-            class="border-2 border-black border-opacity-45 rounded-lg shadow-md p-1 h-[40px] w-[100px] bg-slate-100 focus:w-[200px] lg:focus:w-[400px] transition-all"
+            class="border-2 border-black border-opacity-45 rounded-lg shadow-md p-1 h-[35px] w-[100px] bg-slate-100 focus:w-[200px] lg:focus:w-[400px] transition-all"
             placeholder="Dime"
           />
           <button
@@ -125,7 +122,7 @@
         placeholder="mariajosefa@mail.com"
       />
       <textarea
-        class=" flex m-2 py-2 px-3 border-2 border-black rounded-lg border-opacity-45 "
+        class="flex m-2 py-2 px-3 border-2 border-black rounded-lg border-opacity-45"
         placeholder="Escribe lo que necesites saber"
       />
       <button
@@ -134,7 +131,6 @@
       >
         Enviar
       </button>
-      
     </div>
 
     <div class="footer">
