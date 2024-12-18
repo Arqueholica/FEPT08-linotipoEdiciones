@@ -8,7 +8,7 @@
       <router-link to="/"
         ><img
           src="./assets/LogoLE.svg"
-          class="bg-white rounded-full size-10 lg:size-40 mx-2"
+          class="bg-white rounded-full size-40 mx-2 hover:scale-105 transition-all duration-300 ease-in-out"
       /></router-link>
       Ediciones
     </h1>
@@ -43,14 +43,14 @@
         <div class="relative">
           <input
             type="search"
-            class="border-2 border-black border-opacity-45 rounded-lg shadow-md p-1 h-[35px] w-[100px] bg-slate-100 focus:w-[200px] lg:focus:w-[400px] transition-all"
-            placeholder="Dime"
+            class="border-2 border-black border-opacity-45 rounded-lg shadow-md p-1 h-auto w-auto bg-slate-100 focus:w-[200px] lg:focus:w-[400px] transition-all"
+            placeholder="Buscar"
           />
           <button
-            class="absolute right-2 top-2 px-1 border-l-2 border-black"
+            class="absolute right-1 top-1.5 px-1 border-l-2 border-black"
             type="submit"
           >
-            <img src="../src/assets/search.svg" />
+            <img src="../src/assets/search.svg" class="hover:scale-90" />
           </button>
         </div>
 
@@ -111,26 +111,28 @@
   <footer class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-1">
     <div class="footer">
       <h6 class="footerTitle">CONTACTO</h6>
-      <input
-        class="flex m-2 p-1 border-2 border-black rounded-lg border-opacity-45"
-        type="text"
-        placeholder="María Josefa"
-      />
-      <input
-        class="flex m-2 p-1 border-2 border-black rounded-lg border-opacity-45"
-        type="email"
-        placeholder="mariajosefa@mail.com"
-      />
-      <textarea
-        class="flex m-2 py-2 px-3 border-2 border-black rounded-lg border-opacity-45"
-        placeholder="Escribe lo que necesites saber"
-      />
-      <button
-        class="m-2 px-2 bg-slate-100 border-2 border-black rounded-lg border-opacity-45 hover:scale-90"
-        type="submit"
-      >
-        Enviar
-      </button>
+      <div class="place-items-center">
+        <input
+          class="flex m-2 p-1 border-2 border-black rounded-lg border-opacity-45"
+          type="text"
+          placeholder="María Josefa"
+        />
+        <input
+          class="flex m-2 p-1 border-2 border-black rounded-lg border-opacity-45"
+          type="email"
+          placeholder="mariajosefa@mail.com"
+        />
+        <textarea
+          class="flex m-2 py-2 px-3 border-2 border-black rounded-lg border-opacity-45"
+          placeholder="Escribe lo que necesites saber"
+        />
+        <button
+          class="m-2 px-2 bg-slate-100 border-2 border-black rounded-lg border-opacity-45 hover:scale-90"
+          type="submit"
+        >
+          Enviar
+        </button>
+      </div>
     </div>
 
     <div class="footer">
@@ -177,7 +179,8 @@
         <button
           class="border-2 border-black bg-slate-400 rounded-full font-semibold text-lg hover:bg-slate-600 hover:scale-110 transition-all"
         >
-          👉🏻 ¡Suscríbete! 👈🏻
+          <span class="animate-pulse">👉🏻</span> ¡Suscríbete!
+          <span class="animate-pulse">👈🏻</span>
         </button>
       </div>
     </div>
